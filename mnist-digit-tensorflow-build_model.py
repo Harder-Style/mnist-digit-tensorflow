@@ -25,9 +25,9 @@ x_train, x_test, y_train, y_test = train_test_split(X_train, y_train, test_size=
 
 # Build the neural network
 model = Sequential()
-model.add(Dense(50, input_dim=784, activation='relu')) # Hidden 1
+model.add(Dense(50, input_dim = x_train.shape[1], activation='relu')) # Hidden 1
 model.add(Dense(25, activation='relu')) # Hidden 2
-model.add(Dense(10, input_dim=10, activation='softmax')) # Output
+model.add(Dense(10, input_dim = 10, activation='softmax')) # Output
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
 # Use Early Stopping to avoid overfitting
