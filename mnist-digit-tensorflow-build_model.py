@@ -25,16 +25,16 @@ x_train, x_test, y_train, y_test = train_test_split(X_train, y_train, test_size=
 
 # Build the neural network
 model = Sequential()
-model.add(Dense(50, input_dim = x_train.shape[1], activation='relu')) # Hidden 1
-model.add(Dense(25, activation='relu')) # Hidden 2
-model.add(Dense(10, input_dim = 10, activation='softmax')) # Output
-model.compile(loss='categorical_crossentropy', optimizer='adam')
+model.add(Dense(352, input_dim = x_train.shape[1], activation='relu')) # Hidden 1
+#model.add(Dense(176, activation='relu')) # Hidden 2
+model.add(Dense(10, activation='softmax')) # Output
+model.compile(loss='categorical_crossentropy', optimizer = 'adam', metrics=['accuracy'])
 
 # Use Early Stopping to avoid overfitting
 monitor = EarlyStopping(monitor='val_loss', min_delta=1e-3, patience=10, verbose=1, mode='auto', restore_best_weights=True)
 
 # Train the model
-model.fit(x_train, y_train, validation_data=(x_test, y_test), verbose=2, callbacks=[monitor], epochs=1000)
+model.fit(x_train, y_train, validation_data=(x_test, y_test), verbose=2, callbacks=[monitor], epochs=100)
 
 # Evaluate the model's performance
 predictions = model.predict(x_test)
