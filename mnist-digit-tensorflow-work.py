@@ -7,8 +7,6 @@ from sklearn.metrics import accuracy_score
 from tensorflow.python.keras.models import load_model
 from matplotlib import pyplot as plt
 
-from matplotlib import pyplot as plt
-
 #The goal here is to adopt the digit recognition algorithim developed by Smason Zhang
 #and adopt it to utilize Tensorflow in hopes of achieving greater accuracy. This will use 
 #a Classification NN
