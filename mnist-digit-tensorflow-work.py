@@ -18,13 +18,10 @@ save_path = "."
 if os.path.exists('./mnist-digit-network.h5'):
     #load variables with pickle
     with open("variables.pkl", "rb") as f:
-        x = pickle.load(f)
-        y = pickle.load(f)
         x_test = pickle.load(f)
         y_test = pickle.load(f)
         x_train = pickle.load(f)
         y_train = pickle.load(f)
-        label = pickle.load(f)
 
     model = load_model(os.path.join(save_path,"mnist-digit-network.h5"))
     pred = model.predict(x_test)
@@ -47,8 +44,8 @@ if os.path.exists('./mnist-digit-network.h5'):
         pred = model.predict([sample_digit.reshape(1, -1)])
         print(pred)
         pred = np.argmax(pred,axis=1)
-        print(f"Predict that this image {label[expected_classes[random_indices[i]]]} ")
-        print(f"is: {label[predict_classes[i]]}")
+        print(f"Predict that this image {expected_classes[random_indices[i]]} ")
+        print(f"is: {predict_classes[i]}")
         current_image = sample_digit.reshape((28, 28)) * 255
         plt.gray()
         plt.imshow(current_image, interpolation='nearest')
