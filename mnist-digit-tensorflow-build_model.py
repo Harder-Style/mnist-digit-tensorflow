@@ -25,8 +25,8 @@ x_train, x_test, y_train, y_test = train_test_split(X_train, y_train, test_size=
 
 # Build the neural network
 model = Sequential()
-model.add(Dense(352, input_dim = x_train.shape[1], activation='relu')) # Hidden 1
-#model.add(Dense(176, activation='relu')) # Hidden 2
+model.add(Dense(392, input_dim = x_train.shape[1], activation='relu')) # Hidden 1
+model.add(Dense(196, activation='relu')) # Hidden 2
 model.add(Dense(10, activation='softmax')) # Output
 model.compile(loss='categorical_crossentropy', optimizer = 'adam', metrics=['accuracy'])
 
