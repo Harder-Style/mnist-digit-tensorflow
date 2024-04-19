@@ -4,9 +4,9 @@ import numpy as np
 import pickle
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
-from tensorflow.python.keras.models import Sequential
-from tensorflow.python.keras.layers import Dense
-from tensorflow.python.keras.callbacks import EarlyStopping
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.callbacks import EarlyStopping
 from keras.datasets import mnist
 
 save_path = "."
@@ -48,7 +48,7 @@ model_json = model.to_json()
 with open(os.path.join(save_path,"mnist-digit-network.json"), "w") as json_file: json_file.write(model_json)
 
 # save entire network to HDF5 (save everything, suggested)
-model.save(os.path.join(save_path,"mnist-digit-network.h5"))
+model.save(os.path.join(save_path,"mnist-digit-network.keras"))
 
 #Dump variables into a pickle file to load later
 with open("variables.pkl", "wb") as f:

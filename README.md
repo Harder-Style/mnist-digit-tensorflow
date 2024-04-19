@@ -1,8 +1,9 @@
 # mnist-digit-tensorflow
 Use tensorflow and keras to predict the images in the mnist data set
 
-Shout out to the following people / entities who have helped me through making this
-Jeff Heaton heatonresearch.com his github pages and youtube videos were very helpful 
+Shout out to the following people / entities who have helped me through making this.
+
+Jeff Heaton at heatonresearch.com his github pages and youtube videos were very helpful 
 in setting the foundation and building the templates and snippets that I borrowed from
 heavily.
 

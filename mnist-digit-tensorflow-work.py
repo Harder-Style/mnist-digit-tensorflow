@@ -4,7 +4,7 @@ import pickle
 import subprocess
 import sys
 from sklearn.metrics import accuracy_score
-from tensorflow.python.keras.models import load_model
+from keras.models import load_model
 from matplotlib import pyplot as plt
 
 #The goal here is to adopt the digit recognition algorithim developed by Smason Zhang
@@ -13,7 +13,7 @@ from matplotlib import pyplot as plt
 
 save_path = "."
 
-if os.path.exists('./mnist-digit-network.h5'):
+if os.path.exists('./mnist-digit-network.keras'):
     #load variables with pickle
     with open("variables.pkl", "rb") as f:
         x_test = pickle.load(f)
